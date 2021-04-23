@@ -21,7 +21,7 @@ class Home extends Component {
         })
         .catch(console.log)
     }
-
+    
 
     render() {
     
@@ -41,9 +41,8 @@ class Home extends Component {
                         <div className="col-md-10">
                             <div className="menu">
                                 <ul>
-                                    <li><Link to="/">Post</Link></li>
+                                    <li><Link to="/">Home</Link></li>
                                     <li><Link to="/form">New post</Link></li>
-                                    <li><Link to="/posts">Find post</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -59,8 +58,8 @@ class Home extends Component {
                         <div className="flexContainer">
                         {this.state.postsList.map((aPost) => (
     
-                                    <div className="single-post" style={{flexBasis: "25%"}}>
-                                        <img src={aPost.post_image} alt=""/>
+                                    <div className="single-post" style={{flexBasis: "28%"}}>
+                                        <img id="img-post" src={aPost.post_image} alt=""/>
                                         <Link to={`/post/${aPost.id}`}><h3>{aPost.post_title}</h3></Link>
                                         <h4>Category: <span>{aPost.post_type}</span></h4><h4>ID: <span class="author-name">{aPost.id}</span></h4>
                                         <h4>Date: <span>{aPost.post_date.split("T")[0].split('-').reverse().join('/')}</span></h4>
@@ -76,17 +75,17 @@ class Home extends Component {
                                                         this.setState({...this.state,postsList:json}); //mantiene lo que habia en estado y actualiza la lista con lo que elimine
                                                         }).catch(console.log);
                                                     })
-                                            }}><i className="fa fa-trash"></i></button>
+                                            }}><i className="fa fa-trash" id="icon-button"></i></button>
                                         </span>
 
                                         {/* Edit item */}
                                         <span className ="button-post-right">
-                                            <Link to={`/form/${aPost.id}`}><button type="button" className="btn btn-primary btn-block" id="button_posts"><i className="fa fa-pencil"></i></button></Link>
+                                            <Link to={`/form/${aPost.id}`}><button type="button" className="btn btn-primary btn-block" id="button_posts"><i id="icon-button" className="fa fa-pencil"></i></button></Link>
                                         </span>
                                         </div>
 
                                     </div>
-                        ))}               
+                        ))};               
                         </div>
                     </div>
                 </div>

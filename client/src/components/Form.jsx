@@ -10,6 +10,11 @@ function Form(){
     const [post_date, setPost_date] = useState('');
     const [post_type, setPost_type] = useState('');
     const [post_image, setPost_image] = useState('');
+    console.log(post_title)
+    console.log(post_content)
+    console.log(post_date)
+    console.log(post_type)
+    console.log(post_image)
 
     //Edit post
     const {id} = useParams();
@@ -22,7 +27,7 @@ function Form(){
                         const value= response.data; //devuelve un objeto
                         setPost_title(value.post_title);
                         setPost_content(value.post_content);
-                        setPost_date(value.post_date);
+                        setPost_date(value.post_date.split("T")[0]);
                         setPost_type(value.post_type);
                         setPost_image(value.post_image);
                     }
@@ -82,7 +87,6 @@ function Form(){
                                 <ul>
                                     <li><Link to="/">Post</Link></li>
                                     <li><Link to="/form">New post</Link></li>
-                                    <li><Link to="/posts">Find post</Link></li>
                                 </ul>
                             </div>
                         </div>
