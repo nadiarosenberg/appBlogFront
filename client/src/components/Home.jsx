@@ -61,7 +61,7 @@ class Home extends Component {
                                     <div className="single-post" style={{flexBasis: "28%"}}>
                                         <img id="img-post" src={aPost.post_image} alt=""/>
                                         <Link to={`/post/${aPost.id}`}><h3>{aPost.post_title}</h3></Link>
-                                        <h4>Category: <span>{aPost.post_type}</span></h4><h4>ID: <span class="author-name">{aPost.id}</span></h4>
+                                        <h4>Category: <span>{aPost.post_type}</span></h4>
                                         <h4>Date: <span>{aPost.post_date.split("T")[0].split('-').reverse().join('/')}</span></h4>
                                         
                                         <div className = "button-container">

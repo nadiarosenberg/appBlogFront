@@ -12,7 +12,7 @@ function App() {
       <Route path='/post/:id?' exact><Post/></Route> 
       </Switch></Router>
     </div>
-  );
+  )
 }
 
 export default App;

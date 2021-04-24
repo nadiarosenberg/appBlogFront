@@ -14,7 +14,7 @@ function Post(){
         fetch(`/api/posts/${id}`)
          .then(res => res.json())
          .then(data => {
-           console.log(data);
+           console.log(data)
            setPost(data)
          })
          .catch(console.log)
@@ -56,7 +56,7 @@ function Post(){
                                 <div className="col-md-12">
                                 <div className="blog-area">
                                 <div className="blog-area-part">
-                                    <h3>Date: <span>{post.post_date.split("T")[0].split('-').reverse().join('/')}</span>  //  ID: <span>{post.id}</span> // Category: <span>{post.post_type}</span></h3>
+                                    <h3>Date: <span>{post.post_date.split("T")[0].split('-').reverse().join('/')}</span>  // Category: <span>{post.post_type}</span></h3>
                                     <h2>{post.post_title}</h2>
                                     <img src={post.post_image} />
                                     <p>{post.post_content}</p>
